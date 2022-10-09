@@ -15,6 +15,9 @@ export const AddPostForm = () => {
     const onContentChanged = e => setContent(e.target.value)
     const onAuthorChanged = e => setUserId(e.target.value)
 
+    const canSave =
+
+
     const onSavePostClicked = async () => {
         if (title && content) {
             dispatch(postAdded(title, content, userId))

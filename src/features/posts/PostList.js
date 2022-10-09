@@ -31,6 +31,8 @@ export const PostList = () => {
     const postStatus = useSelector(state => state.posts.status)
     const error = useSelector(state => state.posts.error)
 
+    console.log("posts", posts)
+
     useEffect(() => {
         if (postStatus === 'idle') {
             dispatch(fetchPosts())
@@ -41,7 +43,7 @@ export const PostList = () => {
 
     if (postStatus === 'loading') {
         content = <Spinner text={'Loading...'}/>
-    } else if (postStatus === "Succeeded") {
+    } else if (postStatus === "succeeded") {
         const orderedPosts = posts?.slice().sort((a, b) => b?.date.localeCompare(a?.date))
 
         content = orderedPosts.map(post => (
@@ -50,6 +52,8 @@ export const PostList = () => {
     } else if (postStatus === "failed") {
         content = <div>{error}</div>
     }
+
+    console.log(content)
 
     return (<section className={'posts-list'}>
         <h2>Posts</h2>
