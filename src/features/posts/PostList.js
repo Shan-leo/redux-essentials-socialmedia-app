@@ -31,8 +31,6 @@ export const PostList = () => {
     const postStatus = useSelector(state => state.posts.status)
     const error = useSelector(state => state.posts.error)
 
-    console.log("posts", posts)
-
     useEffect(() => {
         if (postStatus === 'idle') {
             dispatch(fetchPosts())
@@ -52,8 +50,6 @@ export const PostList = () => {
     } else if (postStatus === "failed") {
         content = <div>{error}</div>
     }
-
-    console.log(content)
 
     return (<section className={'posts-list'}>
         <h2>Posts</h2>
