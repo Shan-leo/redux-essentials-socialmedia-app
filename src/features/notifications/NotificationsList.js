@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {allNotificationsRead, selectAllNotifications} from "./notificationsSclice";
-import {selectAllUsers} from "../users/userSlice";
+import {selectAllUsers} from "../users/usersSlice";
 import {formatDistanceToNow, parseISO} from "date-fns";
 import {useLayoutEffect} from "react";
 import classnames from "classnames";
